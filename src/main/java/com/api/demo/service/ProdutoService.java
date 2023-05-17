@@ -9,9 +9,9 @@ public interface ProdutoService {
     
     public List<Produto> listaProdutos();
     
-    public Optional<Produto> getByIdProduto(Integer codProduto);
+    public Optional<Produto> getByIdProduto(Integer idproduto);
     
     public Produto atualizaProduto(Produto produto);
     
-    public void deleteByIdProduto(Integer codProduto);    
+    public void deleteByIdProduto(Integer idproduto);    
 }

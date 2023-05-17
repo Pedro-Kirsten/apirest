@@ -27,9 +27,9 @@ public class ProdutoController {
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.listaProdutos());
     }
     
-    @GetMapping("produto/{codproduto}")
-    public ResponseEntity<Optional<Produto>> getByIdProduto(@PathVariable Integer codproduto){
-        return ResponseEntity.status(HttpStatus.OK).body(produtoService.getByIdProduto(codproduto));
+    @GetMapping("produto/{idproduto}")
+    public ResponseEntity<Optional<Produto>> getByIdProduto(@PathVariable Integer idproduto){
+        return ResponseEntity.status(HttpStatus.OK).body(produtoService.getByIdProduto(idproduto));
     }
 
     @PostMapping("produto")
@@ -42,9 +42,9 @@ public class ProdutoController {
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.atualizaProduto(produto));
     }
     
-    @DeleteMapping("produto/{codproduto}")
-    public ResponseEntity<String> deleteByIdProduto(@PathVariable Integer codproduto){
-        produtoService.deleteByIdProduto(codproduto);
+    @DeleteMapping("produto/{idproduto}")
+    public ResponseEntity<String> deleteByIdProduto(@PathVariable Integer idproduto){
+        produtoService.deleteByIdProduto(idproduto);
         return ResponseEntity.status(HttpStatus.OK).body("Produto removido com sucesso");
     }
 }
