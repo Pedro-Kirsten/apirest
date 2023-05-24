@@ -16,6 +16,9 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    <mvc:cors>
+        <mvc:mapping path="/**" />
+    </mvc:cors>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
