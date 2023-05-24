@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,27 +22,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
-    
+    @CrossOrigin
     @GetMapping("/produtos")
     public ResponseEntity<List<Produto>> listaProdutos(){
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.listaProdutos());
     }
-    
+    @CrossOrigin
     @GetMapping("produto/{idproduto}")
     public ResponseEntity<Optional<Produto>> getByIdProduto(@PathVariable Integer idproduto){
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.getByIdProduto(idproduto));
     }
-
+    @CrossOrigin
     @PostMapping("produto")
     public ResponseEntity<Produto> salvaProduto(@RequestBody Produto produto){
         return ResponseEntity.status(HttpStatus.CREATED).body(produtoService.salvaProduto(produto));
     }
-
+    @CrossOrigin
     @PutMapping("produto")
     public ResponseEntity<Produto> atualizaProduto(@RequestBody Produto produto){
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.atualizaProduto(produto));
     }
-    
+    @CrossOrigin    
     @DeleteMapping("produto/{idproduto}")
     public ResponseEntity<String> deleteByIdProduto(@PathVariable Integer idproduto){
         produtoService.deleteByIdProduto(idproduto);

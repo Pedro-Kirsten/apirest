@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.api.demo.service.PessoaService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/api")
@@ -27,12 +28,12 @@ public class PessoaController {
     
     @Autowired
     private PessoaService pessoaService;
-    
+    @CrossOrigin
     @GetMapping("/pessoas")
     public ResponseEntity<List<Pessoa>> listaPessoa(){
         return ResponseEntity.status(HttpStatus.OK).body(pessoaService.listaPessoa());
     }
-    
+    @CrossOrigin
     @GetMapping("pessoa/{idpessoa}")
     @ApiOperation("Obter detalhes de um pessoa")
     @ApiResponses({
@@ -42,17 +43,17 @@ public class PessoaController {
     public ResponseEntity<Optional<Pessoa>> getByIdPessoa(@PathVariable Integer idpessoa){
         return ResponseEntity.status(HttpStatus.OK).body(pessoaService.getByIdPessoa(idpessoa));
     }
-
+    @CrossOrigin
     @PostMapping("pessoa")
     public ResponseEntity<Pessoa> salvaPessoa(@RequestBody Pessoa pessoa){
         return ResponseEntity.status(HttpStatus.CREATED).body(pessoaService.salvaPessoa(pessoa));
     }
-
+    @CrossOrigin
     @PutMapping("pessoa")
     public ResponseEntity<Pessoa> atualizaPessoa(@RequestBody Pessoa pessoa){
         return ResponseEntity.status(HttpStatus.OK).body(pessoaService.atualizaPessoa(pessoa));
     }
-
+    @CrossOrigin
     @DeleteMapping("pessoa/{idpessoa}")
     public ResponseEntity<String> deleteByIdPessoa(@PathVariable Integer idpessoa){
         pessoaService.deleteByIdPessoa(idpessoa);
