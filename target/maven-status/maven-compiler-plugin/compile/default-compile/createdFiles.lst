@@ -1,0 +1,4 @@
+com\example\api\ApiApplication.class
+com\example\api\controller\ProdutoController.class
+com\example\api\model\Produto.class
+com\example\api\repository\ProdutoRepository.class
