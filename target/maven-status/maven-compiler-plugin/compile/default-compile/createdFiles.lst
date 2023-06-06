@@ -1,4 +1,5 @@
-com\example\api\ApiApplication.class
-com\example\api\controller\ProdutoController.class
-com\example\api\model\Produto.class
-com\example\api\repository\ProdutoRepository.class
+com\produtos\apirest\models\Produto.class
+com\produtos\apirest\resources\ProdutoResource.class
+com\produtos\apirest\repository\ProdutoRepository.class
+com\produtos\apirest\ApiRestApplication.class
+com\produtos\apirest\config\SwaggerConfig.class
